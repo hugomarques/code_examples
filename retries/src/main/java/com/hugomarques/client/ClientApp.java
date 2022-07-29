@@ -22,11 +22,9 @@ public class ClientApp {
         .GET()
         .build();
 
-    Function<HttpRequest, HttpResponse> service = (HttpRequest x) -> callService(x);
-
-    while (NUM_ERRORS < 3) {
+    while (NUM_ERRORS < 1) {
       try {
-        var response = service.apply(request);
+        var response = callService(request);
         NUM_ERRORS = 0;
         System.out.println("--------------------------------------------");
         System.out.println(Thread.currentThread().getName());

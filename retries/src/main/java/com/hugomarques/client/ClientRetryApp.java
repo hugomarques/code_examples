@@ -37,7 +37,7 @@ public class ClientRetryApp {
     final var retryableServiceCall = Retry.decorateFunction(retry, service);
 
 
-    while (NUM_ERRORS < 3) {
+    while (NUM_ERRORS < 1) {
       try {
         var response = retryableServiceCall.apply(request);
         NUM_ERRORS = 0;
